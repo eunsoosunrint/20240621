@@ -1,0 +1,29 @@
+<!--
+    PICO라는 css 라이브러리를 사용하여 UI 완성도을 높힘
+    파도를 표현함
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10517정은수</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+</head>
+<body>
+    <script>
+        for(let j =0; j<5; j++) {
+            for (let i=1; i<=6; i++) {
+                document.write(`<h${i}>Heading ${i}</h${i}>`)
+            }
+            for (let i=6; i>1; i--) {
+                document.write(`<h${i}>Heading ${i}</h${i}>`)
+            }
+        }
+    </script>
+</body>
+</html>

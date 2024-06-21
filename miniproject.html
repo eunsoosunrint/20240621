@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10517정은수</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+</head>
+<body>
+    <article>
+        <header>
+            <h1>숫자 맞추기 게임</h1>
+            이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100사이에 있습니다.
+        </header>
+        
+        숫자: <input id="a" type="number" min="0" max="100"/>
+        <button onclick="check()">확인하기</button><br/><br/>
+        추측횟수: <input id="c" value="0" type="number" readonly/>
+        힌트: <input id="hint" readonly>
+
+    </article>
+    <script>
+        const hint = document.getElementById('hint');
+        const c = document.getElementById('c');
+        let count = 0;
+        let ran = Math.round(Math.random()*100);
+        console.log('ran: '+ran);
+
+        function check() {
+            let i = parseInt(document.getElementById('a').value);
+            if(ran===i) {
+                hint.value = '맞았습니다!!';
+            }else if(ran < i) {
+                hint.value = '높습니다.';
+            }else if(ran > i) {
+                hint.value = '낮습니다.';
+            }
+            c.value = ++count;
+        }
+    </script>
+</body>
+</html>
