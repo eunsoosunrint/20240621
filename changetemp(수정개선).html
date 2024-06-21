@@ -1,0 +1,41 @@
+<!--
+
+    for문 대신 유저가 직접 입력을 할 수 있게 하여 UX 완성도를 높힘
+    PICO라는 css 라이브러리를 사용하여 UI 완성도을 높힘
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10517정은수</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>섭씨온도</td>
+            <td>화씨온도</td>
+        </tr>
+        <tr>
+            <td><input id="cel" type="number"/></td>
+            <td><input id="far" type="number"/></td>
+        </tr>
+    </table>
+    <script>
+        const cel = document.getElementById('cel');
+        const far = document.getElementById('far');
+
+        const toFar = (c) => Number(c * (9/5) + 32).toFixed(1);
+        const toCel = (f) => Number((f-32) * (5/9)).toFixed(1);
+
+        cel.addEventListener('input', (e) => far.value = toFar(cel.value));
+        far.addEventListener('input', (e) => cel.value = toCel(far.value));
+    </script>
+</body>
+</html>

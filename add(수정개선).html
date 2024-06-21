@@ -1,0 +1,33 @@
+<!--
+
+    합계를 readonly로 변경하여 수정할 수 없게함
+    정수 입력 타입을 number로 설정하여 숫자 외에는 넣을 수 없게 함
+    PICO라는 css 라이브러리를 사용하여 UI 완성도을 높힘
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10517정은수</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <script>
+        let calc = (a,b) => parseFloat(a)+parseFloat(b);
+    </script>
+</head>
+<body>
+    <h1>덧셈 계산기</h1>
+    첫번째 정수: <input id="a" type="number"><br/>
+    두번째 정수: <input id="b" type="number"><br/>
+    합계: <input id="v" type="number" readonly>
+    <button onclick="document.getElementById('v').value = calc(
+        document.getElementById('a').value,
+        document.getElementById('b').value
+    )">계산</button>
+</body>
+</html>
